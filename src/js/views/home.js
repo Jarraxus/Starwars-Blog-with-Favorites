@@ -5,7 +5,6 @@ import "../../styles/home.css";
 import { Card } from "../component/card";
 
 export const Home = () => {
-//   const [card, setCard] = useState("");
   const [characters, setCharacters] = useState([]);
   const [planets, setPlanets] = useState([]);
 
@@ -35,10 +34,10 @@ export const Home = () => {
       })
       .then((data) => {
         setPlanets(data.results);
-      })
+		      })
       .catch((error) => {
         console.log("Looks like there was a problem: \n", error);
-      });
+      }); 
   }
 
   function updateAPI(updatedList) {
