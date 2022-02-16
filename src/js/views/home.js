@@ -1,5 +1,4 @@
 // import { getESLintOptions } from "eslint-webpack-plugin/declarations/options";
-import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import "../../styles/home.css";
 import { CharacterCard } from "../component/charactercard";
@@ -75,44 +74,46 @@ export const Home = () => {
 
   return (
     <>
-      <div className="scrollmenu">
-        <div className="row">
-          <div className="col-sm-6">
-            {characters.map((item, index) => {
-              return (
-                <CharacterCard
-                  key={index}
-                  name={item.name}
-                  hair_color={item.hair_color}
-                  eye_color={item.eye_color}
-                  gender={item.gender}
-                />
-              );
-            })}
+      <div className="charactersbanner">
+        <h1>Characters</h1>
+        <div className="scrollmenu">
+          <div className="row">
+            <div className="col-sm-6">
+              {characters.map((item, index) => {
+                return (
+                  <CharacterCard
+                    key={index}
+                    name={item.name}
+                    hair_color={item.hair_color}
+                    eye_color={item.eye_color}
+                    gender={item.gender}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className="scrollmenu">
-        <div className="row">
-          <div className="col-sm-6">
-            {planets.map((item, index) => {
-              return (
-                <PlanetCard
-                  key={index}
-                  name={item.name}
-                  population={item.population}
-                  terrain={item.terrain}
-                />
-              );
-            })}
+        
+        <div className="planetsbanner">
+          <h1>Planets</h1>
+          <div className="scrollmenu">
+            <div className="row">
+              <div className="col-sm-6">
+                {planets.map((item, index) => {
+                  return (
+                    <PlanetCard
+                      key={index}
+                      name={item.name}
+                      population={item.population}
+                      terrain={item.terrain}
+                    />
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </>
   );
 };
-
-// Home.propTypes = {
-//   gender: PropTypes.string,
-// };

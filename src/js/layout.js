@@ -29,7 +29,11 @@ const Layout = () => {
 							<h1>Not found!</h1>
 						</Route>
 					</Switch>
-					<Footer />
+					<Footer
+				owner="Jarraxus"
+				date="2022"
+				link="https://github.com/Jarraxus"
+			/>
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>

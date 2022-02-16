@@ -1,11 +1,23 @@
-div.scrollmenu {
-    background-color: #333;
+div .scrollmenu {
     overflow: auto;
     white-space: nowrap;
   }
   
- .card {
+.card {
     display: inline-block;
     margin: 14px;
     text-decoration: none;
   }
+
+.charactersbanner {
+    padding: 0% 5% 0% 5%;
+}
+
+h1 {
+    padding: 1%;
+}
+
+.navbar {
+    text-decoration: none;
+    padding: 1% 5.5% 1% 5.5%;
+}

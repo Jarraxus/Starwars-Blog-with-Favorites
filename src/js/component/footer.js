@@ -1,10 +1,20 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
-	</footer>
-);
+export const Footer = (props) => {
+	return (
+		<div className="bg-dark mt-5 mb-0">
+			<p className="text-white p-4 text-center mb-0">
+				<a href={props.link}>
+					Copyright &copy; {props.owner} {props.date}
+				</a>
+			</p>
+		</div>
+	);
+};
+
+Footer.propTypes = {
+	owner: PropTypes.string,
+	date: PropTypes.string,
+	link: PropTypes.string,
+};
