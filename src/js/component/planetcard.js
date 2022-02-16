@@ -17,8 +17,8 @@ export const PlanetCard = (props) => {
             <ul>
               <li>Population: {props.population}</li>
               <li>Terrain: {props.terrain}</li>
-              
-            </ul>
+              <li>Climate: {props.climate}</li>
+                          </ul>
           </span>
           <div className="buttons">
             <button href="#" className="btn btn-primary">
@@ -48,4 +48,5 @@ export const PlanetCard = (props) => {
     population: PropTypes.string,
     terrain: PropTypes.string,
     name: PropTypes.string,
+    limate: PropTypes.string,
   };
