@@ -5,7 +5,7 @@ export const StarshipCard = (props) => {
   const [boolean, setBoolean] = useState(false);
 
   return (
-    <div className="card" style={{ width: 400 }}>
+    <div className="card text-white bg-dark" style={{ width: 400 }}>
       <img
         className="card-img-top"
         src="https://via.placeholder.com/400x200.png"
@@ -21,12 +21,12 @@ export const StarshipCard = (props) => {
           </ul>
         </span>
         <div className="buttons">
-          <button href="#" className="btn btn-primary">
+          <button href="#" className="btn btn-secondary">
             Learn More!
           </button>
           <button
             href="#"
-            className="btn btn-outline-warning float-end"
+            className="btn btn-secondary float-end"
             onClick={() => {
               setBoolean(!boolean);
               //add more favorites functionality

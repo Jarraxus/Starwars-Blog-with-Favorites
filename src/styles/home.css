@@ -15,9 +15,18 @@ div .scrollmenu {
 
 h1 {
     padding: 1%;
+    margin: 1%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 25px;
+    border-color: white;
 }
 
 .navbar {
     text-decoration: none;
     padding: 1% 5.5% 1% 5.5%;
+}
+
+.body {
+  background-color: slategray;
 }
