@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export const PlanetCard = (props) => {
@@ -47,8 +48,5 @@ export const PlanetCard = (props) => {
 };
 
 PlanetCard.propTypes = {
-  population: PropTypes.string,
-  terrain: PropTypes.string,
-  name: PropTypes.string,
-  limate: PropTypes.string,
+  planet: PropTypes.object,
 };

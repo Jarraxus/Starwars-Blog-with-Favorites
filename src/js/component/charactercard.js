@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export const CharacterCard = (props) => {
@@ -45,3 +46,7 @@ export const CharacterCard = (props) => {
     </div>
   );
 };
+
+CharacterCard.propTypes = {
+  character: PropTypes.object,
+  };

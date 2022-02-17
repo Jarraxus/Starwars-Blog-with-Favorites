@@ -8,7 +8,7 @@ import { StarshipCard } from "../component/starshipcard";
 export const Home = () => {
   const [characters, setCharacters] = useState([]);
   const [planets, setPlanets] = useState([]);
-  const [starships, setStarships] = useState([])
+  const [starships, setStarships] = useState([]);
 
   useEffect(() => {
     getCharacters();

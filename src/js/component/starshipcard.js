@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export const StarshipCard = (props) => {
@@ -47,8 +48,5 @@ export const StarshipCard = (props) => {
 };
 
 StarshipCard.propTypes = {
-  name: PropTypes.string,
-  model: PropTypes.string,
-  crew: PropTypes.string,
-  passengers: PropTypes.string,
+  starship: PropTypes.object,
 };
