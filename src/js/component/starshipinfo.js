@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
 export const StarshipInfo = (props) => {
+  const info = props.location.state;
+
   return (
     <div className="infocardbody">
       <div className="card mb-3">
@@ -18,10 +19,10 @@ export const StarshipInfo = (props) => {
               <h5 className="card-title text-center">{props.name}Test</h5>
               <div>
                 <ul className="list-group">
-                  <li className="list-group-item">Model: {}</li>
-                  <li className="list-group-item">Manufacturer: {}</li>
-                  <li className="list-group-item">Crew: {}</li>
-                  <li className="list-group-item">Passengers: {}</li>
+                  <li className="list-group-item">Model: {info.model}</li>
+                  <li className="list-group-item">Manufacturer: {info.manufacturer}</li>
+                  <li className="list-group-item">Crew: {info.crew}</li>
+                  <li className="list-group-item">Passengers: {info.passengers}</li>
                 </ul>
               </div>
             </div>
@@ -30,12 +31,4 @@ export const StarshipInfo = (props) => {
       </div>
     </div>
   );
-};
-
-StarshipInfo.propTypes = {
-  name: PropTypes.string,
-  model: PropTypes.string,
-  manufacturer: PropTypes.string,
-  crew: PropTypes.string,
-  passengers: PropTypes.string,
 };

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export const PlanetCard = (props) => {
@@ -22,9 +21,11 @@ export const PlanetCard = (props) => {
           </ul>
         </span>
         <div className="buttons">
-          <button href="#" className="btn btn-secondary">
-            Learn More!
-          </button>
+        <Link to={{ pathname: "/planetinfo/"+props.planet.name, state: props.planet}}>
+            <button href="#" className="btn btn-secondary">
+              Learn More!
+            </button>
+          </Link>
           <button
             href="#"
             className="btn btn-secondary float-end"

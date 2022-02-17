@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const StarshipCard = (props) => {
   const [boolean, setBoolean] = useState(false);
@@ -22,9 +21,11 @@ export const StarshipCard = (props) => {
           </ul>
         </span>
         <div className="buttons">
-          <button href="#" className="btn btn-secondary">
-            Learn More!
-          </button>
+        <Link to={{ pathname: "/starshipinfo/"+props.starship.name, state: props.starship}}>
+            <button href="#" className="btn btn-secondary">
+              Learn More!
+            </button>
+          </Link>
           <button
             href="#"
             className="btn btn-secondary float-end"

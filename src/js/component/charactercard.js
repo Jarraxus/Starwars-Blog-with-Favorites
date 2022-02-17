@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export const CharacterCard = (props) => {
@@ -45,11 +44,4 @@ export const CharacterCard = (props) => {
       </div>
     </div>
   );
-};
-
-CharacterCard.propTypes = {
-  gender: PropTypes.string,
-  hair_color: PropTypes.string,
-  eye_color: PropTypes.string,
-  name: PropTypes.string,
 };

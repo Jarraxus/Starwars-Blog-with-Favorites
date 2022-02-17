@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
 export const PlanetInfo = (props) => {
+  const info = props.location.state;
+
   return (
     <div className="infocardbody">
       <div className="card mb-3">
@@ -15,13 +16,13 @@ export const PlanetInfo = (props) => {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title text-center">{props.name}Test</h5>
+              <h5 className="card-title text-center">{info.name}Test</h5>
               <div>
                 <ul className="list-group">
-                  <li className="list-group-item">Population: {}</li>
-                  <li className="list-group-item">Terrain: {}</li>
-                  <li className="list-group-item">Climate: {}</li>
-                  <li className="list-group-item">Gravity: {}</li>
+                  <li className="list-group-item">Population: {info.population}</li>
+                  <li className="list-group-item">Terrain: {info.terrain}</li>
+                  <li className="list-group-item">Climate: {info.climate}</li>
+                  <li className="list-group-item">Gravity: {info.gravity}</li>
                 </ul>
               </div>
             </div>
@@ -30,12 +31,4 @@ export const PlanetInfo = (props) => {
       </div>
     </div>
   );
-};
-
-PlanetInfo.propTypes = {
-  name: PropTypes.string,
-  population: PropTypes.string,
-  terrain: PropTypes.string,
-  climate: PropTypes.string,
-  gravity: PropTypes.string,
 };
