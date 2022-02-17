@@ -78,10 +78,7 @@ export const Home = () => {
                 return (
                   <CharacterCard
                     key={index}
-                    name={item.name}
-                    hair_color={item.hair_color}
-                    eye_color={item.eye_color}
-                    gender={item.gender}
+                    character={item}
                   />
                 );
               })}
@@ -98,10 +95,7 @@ export const Home = () => {
                   return (
                     <PlanetCard
                       key={index}
-                      name={item.name}
-                      population={item.population}
-                      terrain={item.terrain}
-                      climate={item.climate}
+                      planet={item}
                     />
                   );
                 })}
@@ -119,10 +113,7 @@ export const Home = () => {
                   return (
                     <StarshipCard
                       key={index}
-                      name={item.name}
-                      model={item.model}
-                      crew={item.crew}
-                      passengers={item.passengers}
+                      starship={item}
                     />
                   );
                 })}
