@@ -1,8 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
+import { Context } from "../store/appContext";
 
 export const CharacterInfo = (props) => {
+  const {store, action} = useContext(Context);
+  // console.log("store/people" +store.people);
+  let testarray = [];
+  store.people.map((item) =>{
+    testarray.push(item)
+  });
+  console.log("test"+testarray);
   //This shiz is hella import
   const info = props.location.state;
   
