@@ -1,36 +1,36 @@
-div .scrollmenu {
-    overflow: auto;
-    white-space: nowrap;
-  }
-  
 .card {
-    display: inline-block;
-    margin: 14px;
-    text-decoration: none;
-  }
-
-.banner {
-    padding: 0% 5% 0% 5%;
+  display: inline-block;
+  margin: 14px;
+  text-decoration: none;
 }
 
-h1 {
-    padding: 1%;
-    margin: 1%;
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 25px;
-    border-color: white;
+.banner {
+  padding: 0% 5% 0% 5%;
+}
+
+h2 {
+  padding: 1%;
+  margin: 1%;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 25px;
+  border-color: white;
 }
 
 .navbar {
-    text-decoration: none;
-    padding: 1% 5.5% 1% 5.5%;
+  text-decoration: none;
+  padding: 1% 5.5% 1% 5.5%;
 }
 
 .body {
   background-color: slategray;
 }
 
-.infocardbody{
-  margin: 0% 5% 0% 5%;
+.cards {
+  list-style: none !important;
+  overflow-x: auto !important;
+}
+.card,
+li {
+  list-style: none !important;
 }

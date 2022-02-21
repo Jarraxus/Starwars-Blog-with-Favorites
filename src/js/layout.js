@@ -6,42 +6,41 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
-import { Cards } from "./component/cards";
-import { Details } from "./component/details";
+// import { Cards } from "./component/cards";
+import { Details } from "./views/details";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
-	//the basename is used when your project is published in a subdirectory and not in the root of the domain
-	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-	const basename = process.env.BASENAME || "";
+  //the basename is used when your project is published in a subdirectory and not in the root of the domain
+  // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+  const basename = process.env.BASENAME || "";
 
-	return (
-		<div className="body">
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route exact path="/demo" component={Demo} />			
-						<Route exact path="/single/:theid" component={Single} />
-						<Route exact path="/cards/:theid" component={Cards} />
-						<Route exact path="/details/:theid" component={Details} />
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
-					</Switch>
-					<Footer
-				owner="Jarraxus"
-				date="2022"
-				link="https://github.com/Jarraxus"
-			/>
-				</ScrollToTop>
-			</BrowserRouter>
-		</div>
-	);
+  return (
+    <div className="body">
+      <BrowserRouter basename={basename}>
+        <ScrollToTop>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/demo" component={Demo} />
+            <Route exact path="/single/:theid" component={Single} />
+            <Route exact path="/details/:name" component={Details} />
+            <Route>
+              <h1>Not found!</h1>
+            </Route>
+          </Switch>
+          <Footer
+            owner="Jarraxus"
+            date="2022"
+            link="https://github.com/Jarraxus"
+          />
+        </ScrollToTop>
+      </BrowserRouter>
+    </div>
+  );
 };
 
 export default injectContext(Layout);
