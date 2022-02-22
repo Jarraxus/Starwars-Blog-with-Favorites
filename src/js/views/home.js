@@ -25,6 +25,7 @@ export const Home = () => {
                     value2: character.hair_color,
                     value3: character.eye_color,
                     entity: character,
+                    index: i,
                   }}
                 />
               </li>

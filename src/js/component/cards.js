@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const Cards = ({ cardData }) => {
   const [boolean, setBoolean] = useState(false);
- 
+  const { store, actions } = useContext(Context);
+
   return (
     <div>
       {cardData ? (
@@ -38,7 +40,7 @@ export const Cards = ({ cardData }) => {
               className="btn btn-secondary float-end"
               onClick={() => {
                 setBoolean(!boolean);
-                //add more favorites functionality
+                actions.addFavorites(cardData);
               }}
             >
               {boolean ? (

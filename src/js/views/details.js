@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 export const Details = (props) => {
-  const [boolean, setBoolean] = useState(false);
   const object = props.location.state;
 
   let currentDetails = [];
@@ -26,21 +25,7 @@ export const Details = (props) => {
                 {currentDetails.map((item, index) => {
                   return <li key={index}><strong>{`${item[0]}:`} </strong>{`${item[1]}`}</li>
                 })}
-              </ul>
-            <button
-              href="#"
-              className="btn btn-secondary float-end"
-              onClick={() => {
-                setBoolean(!boolean);
-                //add more favorites functionality
-              }}
-            >
-              {boolean ? (
-                <i className="fas fa-heart"></i>
-              ) : (
-                <i className="far fa-heart"></i>
-              )}
-            </button>
+            </ul>
           </div>
         </div>
       </div>

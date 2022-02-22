@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Navbar = () => {
+export const Navbar = ({cardData}) => {
   const { store, actions } = useContext(Context);
 
   return (
@@ -14,11 +14,13 @@ export const Navbar = () => {
       </Link>
       <div className="ml-auto">
           <div className="dropdown">
-          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
             Favorites
           </button>
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            {store.favorites.map((fav, i) => <li key={i}>{fav}</li>)}
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {store.favorites.map((fav, name) => <li key={name}>{fav.name}<i
+									className="delete fa fa-trash"
+									onClick={() => actions.deleteFavorites(cardData)}></i></li>)}
           </ul>
         </div>
       </div>
