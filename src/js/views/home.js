@@ -1,40 +1,18 @@
 // import { getESLintOptions } from "eslint-webpack-plugin/declarations/options";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../../styles/home.css";
 import { Cards } from "../component/cards";
+import { Context } from "../store/appContext";
 
 export const Home = () => {
-  const [characters, setCharacters] = useState([]);
-  const [planets, setPlanets] = useState([]);
-  const [starships, setStarships] = useState([]);
-
-  useEffect(() => {
-    getData("https://swapi.dev/api/people/", setCharacters);
-    getData("https://swapi.dev/api/planets/", setPlanets);
-    getData("https://swapi.dev/api/starships/", setStarships);
-  }, []);
-
-  function getData(url, setter) {
-    fetch(url, { method: "GET" })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        // console.log("data: ",data.results);
-        setter(data.results);
-        // console.log("results: ", data.results);
-      })
-      .catch((error) => {
-        console.log("Looks like there was a problem: \n", error);
-      });
-  }
+  const { store, actions } = useContext(Context);
 
   return (
     <div className="container">
       <div className="characters mt-5">
         <h2 className="">Characters</h2>
         <ul className="cards characters-cards d-flex flex-nowrap p-0">
-          {characters.map((character, i) => {
+          {store.characters.map((character, i) => {
             return (
               <li id={i} key={i} className="home">
                 <Cards
@@ -57,7 +35,7 @@ export const Home = () => {
       <div className="characters mt-5">
         <h2 className="">Planets</h2>
         <ul className="cards characters-cards d-flex flex-nowrap p-0">
-          {planets.map((planet, i) => {
+          {store.planets.map((planet, i) => {
             return (
               <li id={i} key={i} className="home">
                 <Cards
@@ -80,7 +58,7 @@ export const Home = () => {
       <div className="characters mt-5">
         <h2 className="">Starships</h2>
         <ul className="cards characters-cards d-flex flex-nowrap p-0">
-          {starships.map((starship, i) => {
+          {store.starships.map((starship, i) => {
             return (
               <li id={i} key={i} className="home">
                 <Cards
