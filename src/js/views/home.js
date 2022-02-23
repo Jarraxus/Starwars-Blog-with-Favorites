@@ -49,6 +49,7 @@ export const Home = () => {
                     value2: planet.terrain,
                     value3: planet.climate,
                     entity: planet,
+                    index: i,
                   }}
                 />
               </li>
@@ -72,6 +73,7 @@ export const Home = () => {
                     value2: starship.crew,
                     value3: starship.passengers,
                     entity: starship,
+                    index: i,
                   }}
                 />
               </li>

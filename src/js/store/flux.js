@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      favorites: [{name:""}],
+      favorites: [],
       characters: [],
       planets: [],
       starships: [],
@@ -40,10 +40,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         setStore({ favorites: newFavorites });
       },
 
-	  deleteFavorites: (fav) => {
+	  deleteFavorites: () => {
         //get the global store and place it into a local array
-        const newFavorites = getStore().favorites;
-		newFavorites.filter((fav, i) => i != i);
+        const newFavorites = getStore().favorites.filter((fav, i) => i != i);
         //reset the global store
         setStore({ favorites: newFavorites });
       },
