@@ -9,7 +9,7 @@ export const Details = (props) => {
   }
 
   return (
-    <div className="card text-white bg-dark mb-3" style={{ maxWidth: "540px" }}>
+    <div className="card text-white bg-dark mb-3">
       <div className="row no-gutters">
         <div className="col-md-4">
           <img
@@ -20,7 +20,7 @@ export const Details = (props) => {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{object.name}</h5>
+            <h5 className="card-title"></h5>
             <ul className="d-flex flex-column">
                 {currentDetails.map((item, index) => {
                   return <li key={index}><strong>{`${item[0]}:`} </strong>{`${item[1]}`}</li>
