@@ -32,41 +32,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  .catch(error => console.log(error));
 	  },
 
-	  addFavorites: (fav) => {
+	  toggleFavorites: (favName) => {
         //get the global store and place it into a local array
-        const newFavorites = getStore().favorites;
-		newFavorites.push(fav)
+        let newFavorites = getStore().favorites;
+        let found = newFavorites.find(item => {
+          if (item == favName) {
+            return item
+          }
+        });
+        if (found) {
+                    newFavorites = newFavorites.filter(item => item != favName);
+        } else {
+          newFavorites = [...newFavorites, favName];
+        }
         //reset the global store
         setStore({ favorites: newFavorites });
       },
-
-	  deleteFavorites: () => {
-        //get the global store and place it into a local array
-        const newFavorites = getStore().favorites.filter((fav, i) => i != i);
-        //reset the global store
-        setStore({ favorites: newFavorites });
-      },
-
-      loadSomeData: () => {
-        /**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-      },
-    //   changeColor: (index, color) => {
-    //     //get the store
-    //     const store = getStore();
-
-    //     //we have to loop the entire demo array to look for the respective index
-    //     //and change its color
-    //     const demo = store.demo.map((elm, i) => {
-    //       if (i === index) elm.background = color;
-    //       return elm;
-    //     });
-
-    //     //reset the global store
-    //     setStore({ demo: demo });
-    //     setStore({ store: favorites });
-    //   },
     },
   };
 };

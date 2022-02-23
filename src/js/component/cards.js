@@ -1,10 +1,22 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Cards = ({ cardData }) => {
   const [boolean, setBoolean] = useState(false);
   const { store, actions } = useContext(Context);
+  useEffect(() => {
+    let position = store.favorites.find(item => {
+      if (item == cardData.name) {
+        return item;
+      }
+    })
+    if (position) {
+      setBoolean(true);
+    } else {
+      setBoolean(false);
+    }
+  });
 
   return (
     <div>
@@ -40,7 +52,7 @@ export const Cards = ({ cardData }) => {
               className="btn btn-secondary float-end"
               onClick={() => {
                 setBoolean(!boolean);
-                actions.addFavorites(cardData);
+                actions.toggleFavorites(cardData.name);
               }}
             >
               {boolean ? (

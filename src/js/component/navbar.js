@@ -18,9 +18,9 @@ export const Navbar = ({cardData}) => {
             Favorites
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {store.favorites.map((fav, name) => <li key={name}>{fav.name}<i
+            {store.favorites.map((fav, index) => <li key={index}>{fav}<i
 									className="delete fa fa-trash"
-									onClick={() => actions.deleteFavorites(cardData)}></i></li>)}
+									onClick={() => actions.toggleFavorites(fav)}></i></li>)}
           </ul>
         </div>
       </div>
